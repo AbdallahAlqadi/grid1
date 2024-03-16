@@ -12,6 +12,7 @@ margin-right: 50px;
 .griditem{
 
     margin-left: 20px;
+    margin-right: 20px;
   text-align: center;
   background-color: blue;
   padding: 50px;
@@ -29,7 +30,8 @@ margin-right: 50px;
 }
 
 .item{
-    margin-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
   background-color: blue;
   padding: 50px; 
