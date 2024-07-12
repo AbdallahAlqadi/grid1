@@ -1,100 +1,51 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جدول مع Scrollbar</title>
-    <link rel="stylesheet" href="index1.css">
+<title>My Example</title>
+
+<!-- CSS -->
+<style>
+/* Force scrollbars onto browser window */
+
+
+/* Box styles */
+.myBox {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 200px;
+height: 200px;
+overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 10px olivedrab;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: yellowgreen; 
+box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #7bac10;
+}
+</style>
 </head>
 <body>
-    <h1>جدول مع Scrollbar</h1>
 
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>الاسم</th>
-                    <th>الوظيفة</th>
-                    <th>الراتب</th>
-                    <th>المدينة</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>شام نتن</td>
-                    <td>مبرمج</td>
-                    <td>10000</td>
-                    <td>دمشق</td>
-                </tr>
-                <tr>
-                    <td>نيفين كومار</td>
-                    <td>مُصممة جرافيك</td>
-                    <td>8000</td>
-                    <td>بيروت</td>
-                </tr>
-                <tr>
-                    <td>نيفيتا دينيش</td>
-                    <td>محللة بيانات</td>
-                    <td>9000</td>
-                    <td>عمان</td>
-                </tr>
-                <tr>
-                    <td>رودرا شانكار</td>
-                    <td>مهندس شبكات</td>
-                    <td>7500</td>
-                    <td>الدوحة</td>
-                </tr>
-                <tr>
-                    <td>شام نتن</td>
-                    <td>مبرمج</td>
-                    <td>10000</td>
-                    <td>دمشق</td>
-                </tr>
-                <tr>
-                    <td>نيفين كومار</td>
-                    <td>مُصممة جرافيك</td>
-                    <td>8000</td>
-                    <td>بيروت</td>
-                </tr>
-                <tr>
-                    <td>نيفيتا دينيش</td>
-                    <td>محللة بيانات</td>
-                    <td>9000</td>
-                    <td>عمان</td>
-                </tr>
-                <tr>
-                    <td>رودرا شانكار</td>
-                    <td>مهندس شبكات</td>
-                    <td>7500</td>
-                    <td>الدوحة</td>
-                </tr>
-                <tr>
-                    <td>شام نتن</td>
-                    <td>مبرمج</td>
-                    <td>10000</td>
-                    <td>دمشق</td>
-                </tr>
-                <tr>
-                    <td>نيفين كومار</td>
-                    <td>مُصممة جرافيك</td>
-                    <td>8000</td>
-                    <td>بيروت</td>
-                </tr>
-                <tr>
-                    <td>نيفيتا دينيش</td>
-                    <td>محللة بيانات</td>
-                    <td>9000</td>
-                    <td>عمان</td>
-                </tr>
-                <tr>
-                    <td>رودرا شانكار</td>
-                    <td>مهندس شبكات</td>
-                    <td>7500</td>
-                    <td>الدوحة</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<!-- HTML -->
+<div class="myBox">
+Efficient honorificabilitudinitatibus cross-media information without floccinaucinihilipilification cross-media value. Quickly maximize timely deliverables for real-time schemas plenipotentiary.
+</div>
 
 </body>
 </html>
