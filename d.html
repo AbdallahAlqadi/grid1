@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>خصائص العقد في DOM</title>
 </head>
 <body>
-
-
-
-    <script>
-
-
-var x=10
-function a(){
-    console.log("Hello World");
-     x=5
- }
-a()
-alert(x)
- </script>
+    <div id="parentElement">
+        <p>العقدة الأولى</p>
+        <p>العقدة الثانية</p>
+        <span>عقدة فرعية مع عنصر <b>عريض</b></span>
+    </div>
     
+    <script>
+        // الحصول على العنصر الأب
+let parent = document.getElementById("parentElement");
+
+// 1. childNodes - عرض جميع العقد الفرعية
+console.log("childNodes:", parent.childNodes);
+
+// 2. firstChild - عرض أول عقدة فرعية
+console.log("firstChild:", parent.firstChild);
+
+// 3. lastChild - عرض آخر عقدة فرعية
+console.log("lastChild:", parent.lastChild);
+
+// 4. nextSibling - عرض العقدة الشقيقة التالية لأول عقدة فرعية
+console.log("nextSibling of firstChild:", parent.firstChild.nextSibling);
+
+// 5. nodeName - عرض اسم العقدة
+console.log("nodeName:", parent.nodeName);
+
+// 6. nodeType - عرض نوع العقدة
+console.log("nodeType:", parent.nodeType);
+
+// 7. nodeValue - عرض قيمة العقدة (عادةً للعقد النصية فقط)
+console.log("nodeValue of firstChild:", parent.firstChild.nodeValue); // قد تكون null إذا كانت عقدة عنصر
+
+// 8. parentNode - عرض العقدة الأصلية لأول عقدة فرعية
+console.log("parentNode of firstChild:", parent.firstChild.parentNode);
+
+// 9. previousSibling - عرض العقدة الشقيقة السابقة لآخر عقدة فرعية
+console.log("previousSibling of lastChild:", parent.lastChild.previousSibling);
+
+// 10. textContent - عرض محتوى النص داخل العنصر
+console.log("textContent:", parent.textContent);
+
+    </script>
 </body>
 </html>
+
