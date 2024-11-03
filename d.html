@@ -6,7 +6,7 @@
     <title>خصائص العقد في DOM</title>
 </head>
 <body>
-    <div id="parentElement">
+    <div id="parentElement">    
         <p>العقدة الأولى</p>
         <p>العقدة الثانية</p>
         <span>عقدة فرعية مع عنصر <b>عريض</b></span>
@@ -14,8 +14,7 @@
     
     <script>
         // الحصول على العنصر الأب
-let parent = document.getElementById("parentElement");
-
+let parent = document.getElementById("parentElement")
 // 1. childNodes - عرض جميع العقد الفرعية
 console.log("childNodes:", parent.childNodes);
 
@@ -36,13 +35,11 @@ console.log("nodeType:", parent.nodeType);
 
 // 7. nodeValue - عرض قيمة العقدة (عادةً للعقد النصية فقط)
 console.log("nodeValue of firstChild:", parent.firstChild.nodeValue); // قد تكون null إذا كانت عقدة عنصر
-
 // 8. parentNode - عرض العقدة الأصلية لأول عقدة فرعية
 console.log("parentNode of firstChild:", parent.firstChild.parentNode);
-
+console.log("parentNode of firstChild:", parent.lastChild.parentNode);
 // 9. previousSibling - عرض العقدة الشقيقة السابقة لآخر عقدة فرعية
 console.log("previousSibling of lastChild:", parent.lastChild.previousSibling);
-
 // 10. textContent - عرض محتوى النص داخل العنصر
 console.log("textContent:", parent.textContent);
 
