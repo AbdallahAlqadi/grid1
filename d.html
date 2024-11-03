@@ -1,49 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خصائص العقد في DOM</title>
+    <title>className vs classList Example</title>
+    <style>
+        .blue { color: blue; }
+        .bold { font-weight: bold; }
+        .italic { font-style: italic; }
+    </style>
 </head>
 <body>
-    <div id="parentElement">    
-        <p>العقدة الأولى</p>
-        <p>العقدة الثانية</p>
-        <span>عقدة فرعية مع عنصر <b>عريض</b></span>
-    </div>
-    
+    <h1 id="myElement" class="blue">Hello, World!</h1>
+
     <script>
-        // الحصول على العنصر الأب
-let parent = document.getElementById("parentElement")
-// 1. childNodes - عرض جميع العقد الفرعية
-console.log("childNodes:", parent.childNodes);
+        let element = document.getElementById("myElement");
 
-// 2. firstChild - عرض أول عقدة فرعية
-console.log("firstChild:", parent.firstChild);
+        // Initial className
+        console.log("Initial className:", element.className); // Output: "blue"
 
-// 3. lastChild - عرض آخر عقدة فرعية
-console.log("lastChild:", parent.lastChild);
+        // Using className to replace all classes
+        element.className = "bold italic";
+        console.log("After setting className to 'bold italic':", element.className); // Output: "bold italic"
 
-// 4. nextSibling - عرض العقدة الشقيقة التالية لأول عقدة فرعية
-console.log("nextSibling of firstChild:", parent.firstChild.nextSibling);
+        // Using classList to add a class
+        element.classList.add("blue");
+        console.log("After adding 'blue' with classList:", element.className); // Output: "bold italic blue"
 
-// 5. nodeName - عرض اسم العقدة
-console.log("nodeName:", parent.nodeName);
+        // Using classList to remove a class
+        element.classList.remove("italic");
+        console.log("After removing 'italic' with classList:", element.className); // Output: "bold blue"
 
-// 6. nodeType - عرض نوع العقدة
-console.log("nodeType:", parent.nodeType);
+        // Using classList to toggle a class
+        element.classList.toggle("bold"); // Since "bold" exists, it will be removed
+        console.log("After toggling 'bold' (remove since it's present):", element.className); // Output: "blue"
 
-// 7. nodeValue - عرض قيمة العقدة (عادةً للعقد النصية فقط)
-console.log("nodeValue of firstChild:", parent.firstChild.nodeValue); // قد تكون null إذا كانت عقدة عنصر
-// 8. parentNode - عرض العقدة الأصلية لأول عقدة فرعية
-console.log("parentNode of firstChild:", parent.firstChild.parentNode);
-console.log("parentNode of firstChild:", parent.lastChild.parentNode);
-// 9. previousSibling - عرض العقدة الشقيقة السابقة لآخر عقدة فرعية
-console.log("previousSibling of lastChild:", parent.lastChild.previousSibling);
-// 10. textContent - عرض محتوى النص داخل العنصر
-console.log("textContent:", parent.textContent);
+        element.classList.toggle("bold"); // Since "bold" is now absent, it will be added
+        console.log("After toggling 'bold' again (add since it's absent):", element.className); // Output: "blue bold"
 
+        // Using classList to check if a class exists
+        console.log("Contains 'blue'?", element.classList.contains("blue")); // Output: true
+        console.log("Contains 'italic'?", element.classList.contains("italic")); // Output: false
     </script>
 </body>
 </html>
-
