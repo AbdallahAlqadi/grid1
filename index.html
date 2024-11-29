@@ -169,7 +169,7 @@
     <div class="container">
         <h1>Weather App</h1>
         <p>Check the weather of your city:</p>
-        <input type="text" id="city" placeholder="Enter city name">
+        <input type="text" id="city" placeholder="Enter city name" onkeydown="handleEnter(event)">
         <button onclick="getWeather()">Get Weather</button>
         <button onclick="getWeatherByLocation()">Use My Location</button>
         <div id="weather"></div>
@@ -178,6 +178,12 @@
 
     <script>
         const apiKey = "74e78b2aceaa072d0af57acd3b039171";
+
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                getWeather();
+            }
+        }
 
         function getWeatherIcon(temp) {
             if (temp < 0) return "❄️";
