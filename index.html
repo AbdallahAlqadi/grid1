@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         /* Global Styles */
         * {
@@ -180,7 +181,6 @@
     <script>
         const apiKey = "74e78b2aceaa072d0af57acd3b039171";
 
-        // Utility Functions
         function getWeatherIcon(temp) {
             if (temp < 0) return "❄️";
             if (temp >= 0 && temp < 15) return "🌬️";
@@ -220,7 +220,12 @@
         async function getWeather() {
             const city = document.getElementById('city').value.trim();
             if (!city) {
-                alert("Please enter a city name.");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Empty Input',
+                    text: 'Please enter a city name.',
+                    confirmButtonColor: '#0072ff'
+                });
                 return;
             }
 
@@ -232,13 +237,23 @@
                 displayWeather(data);
                 updateHistory(data.name);
             } catch (error) {
-                alert(error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message,
+                    confirmButtonColor: '#ff512f'
+                });
             }
         }
 
         async function getWeatherByLocation() {
             if (!navigator.geolocation) {
-                alert("Geolocation is not supported by your browser.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Geolocation Not Supported',
+                    text: 'Your browser does not support geolocation.',
+                    confirmButtonColor: '#0072ff'
+                });
                 return;
             }
 
@@ -253,10 +268,20 @@
                     displayWeather(data);
                     updateHistory(data.name);
                 } catch (error) {
-                    alert("Unable to retrieve weather data.");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Unable to retrieve weather data.',
+                        confirmButtonColor: '#ff512f'
+                    });
                 }
             }, () => {
-                alert("Unable to retrieve your location.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Location Access Denied',
+                    text: 'Unable to retrieve your location.',
+                    confirmButtonColor: '#ff512f'
+                });
             });
         }
 
